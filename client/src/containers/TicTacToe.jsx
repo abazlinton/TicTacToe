@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '../components/Grid';
+import WinStates from '../WinStates';
 
 class TicTacToe extends React.Component {
 
@@ -17,9 +18,12 @@ class TicTacToe extends React.Component {
         null,
         null
       ],
-      player: "X"
-    }
+      player: "X",
+      winMessage: ""
+    };
+  
     this.takeCell = this.takeCell.bind(this);
+    // this.checkForWin = this.checkForWin.bind(this);
   }
 
   takeCell(location){
@@ -32,8 +36,40 @@ class TicTacToe extends React.Component {
         nextPlayer = "X"
       }
       newGrid[location] = nextPlayer; 
-      this.setState({grid: newGrid, player: nextPlayer});
+      this.setState({grid: newGrid, player: nextPlayer}, this.checkForWin);
     }
+  }
+
+  checkForWin(){
+    const grid = this.state.grid;    
+    WinStates.forEach(function(winState){
+      if (grid[winState[0]] === "X" && grid[winState[1]] === "X" && grid[winState[2]] ==="X") {  
+        this.setState({winMessage: "X WINS!"});
+        setTimeout(()=>{this.resetState()}, 2000);
+      }
+      if (grid[winState[0]] === "O" && grid[winState[1]] === "O" && grid[winState[2]] ==="O") {
+        this.setState({winMessage: "O WINS!"}); 
+        setTimeout(()=>{this.resetState()}, 2000);
+      }
+    }.bind(this))
+  }
+
+  resetState(){
+    this.setState({
+      grid: [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      player: "X",
+      winMessage: ""
+    })
   }
 
   render(){
@@ -41,6 +77,7 @@ class TicTacToe extends React.Component {
       <Grid
         grid={this.state.grid}
         takeCell={this.takeCell}
+        winMessage={this.state.winMessage}
       />
     )
   }
