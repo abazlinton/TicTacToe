@@ -1,5 +1,12 @@
 #board {
-  width: 50%;
-  height: 50%;
-  background-color: red;
+  background-color: lightgrey;
+  width: 31.2em;
+  height: 31.2em;
+}
+
+.cell {
+  width: 10em;
+  height: 10em;
+  display: inline-block;
+  border: 0.1em solid black;
 }
