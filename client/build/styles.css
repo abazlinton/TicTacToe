@@ -1,12 +1,25 @@
+body {
+  margin: 40px;
+}
+
 #board {
-  background-color: lightgrey;
-  width: 31.2em;
-  height: 31.2em;
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 5px;
+  background-color: #fff;
+  color: #444;
+  /*align-items: center;*/
 }
 
 .cell {
-  width: 10em;
-  height: 10em;
-  display: inline-block;
-  border: 0.1em solid black;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: lightgrey;
+  font-size: 4em;
+  /*vertical-align: middle;*/
+  /*font-size: 1em;*/
 }
+
