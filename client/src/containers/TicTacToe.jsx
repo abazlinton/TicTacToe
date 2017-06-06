@@ -23,7 +23,6 @@ class TicTacToe extends React.Component {
     };
   
     this.takeCell = this.takeCell.bind(this);
-    // this.checkForWin = this.checkForWin.bind(this);
   }
 
   takeCell(location){

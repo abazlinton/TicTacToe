@@ -7,7 +7,6 @@ const Grid = ({grid, takeCell, winMessage}) => {
     return <Cell key={index} player={cell} location={index} takeCell={takeCell}/>
   })
 
-  console.log(winMessage);
 
   return(
     <div id="grid">
