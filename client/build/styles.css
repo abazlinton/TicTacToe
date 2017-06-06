@@ -5,8 +5,8 @@ body {
 #board {
   display: grid;
   align-items: stretch;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 10vw 10vw 10vw;
+  grid-template-rows: 10vw 10vw 10vw;
   grid-gap: 5px;
   background-color: #fff;
   color: #444;
@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   background-color: lightgrey;
-  font-size: 4em;
+  font-size: 8vw;
   /*vertical-align: middle;*/
   /*font-size: 1em;*/
 }
