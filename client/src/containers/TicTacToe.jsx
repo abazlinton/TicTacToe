@@ -8,15 +8,7 @@ class TicTacToe extends React.Component {
     super(props);
     this.state = {
       grid: [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        null,null,null, null, null, null, null, null, null
       ],
       player: "X",
       winMessage: ""
@@ -56,15 +48,7 @@ class TicTacToe extends React.Component {
   resetState(){
     this.setState({
       grid: [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        null, null, null, null, null, null, null, null, null
       ],
       player: "X",
       winMessage: ""
