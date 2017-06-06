@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Cell = () => {
+const Cell = ({player, takeCell, location}) => {
+
+  const handleClick = () => {
+    takeCell(location);
+  }
 
   return (
-    <div className='cell'>X</div>
+    <div className='cell' onClick={handleClick}>{player}</div>
   )
 
 }
