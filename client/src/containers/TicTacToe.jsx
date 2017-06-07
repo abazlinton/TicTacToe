@@ -21,29 +21,32 @@ class TicTacToe extends React.Component {
   takeCell(location){
     if (!this.state.grid[location] && !this.state.winner) {
       const newGrid = this.state.grid.slice();
-      let nextPlayer = "";
-      if (this.state.player === "X") {
-        nextPlayer = "O"
-      } else {
-        nextPlayer = "X"
-      }
-      newGrid[location] = nextPlayer; 
-      this.setState({grid: newGrid, player: nextPlayer}, this.checkForWin);
+      newGrid[location] = this.state.player;
+      this.setState({grid: newGrid}, this.checkForWin);
     }
   }
 
   checkForWin(){
-    const grid = this.state.grid;    
+    const grid = this.state.grid;   
+    const currentPlayer = this.state.player; 
     WinStates.forEach(function(winState){
-      if (grid[winState[0]] === "X" && grid[winState[1]] === "X" && grid[winState[2]] ==="X") {  
+      if (grid[winState[0]] === currentPlayer && grid[winState[1]] === currentPlayer && grid[winState[2]] === currentPlayer) {  
         setTimeout(()=>{this.resetState()}, 2000);
-        this.setState({winner: "X"});
+        this.setState({winner: currentPlayer});
       }
-      if (grid[winState[0]] === "O" && grid[winState[1]] === "O" && grid[winState[2]] ==="O") {
-        setTimeout(()=>{this.resetState()}, 2000);
-        this.setState({winner: "O"});
-      }
+      this.nextTurn();
     }.bind(this))
+    
+  }
+
+  nextTurn(){
+    let nextPlayer = "";
+    if (this.state.player === "X") {
+      nextPlayer = "O"
+    } else {
+      nextPlayer = "X"
+    } 
+    this.setState({player: nextPlayer});
   }
 
   resetState(){
