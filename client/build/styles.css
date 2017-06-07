@@ -10,7 +10,6 @@ body {
   grid-gap: 5px;
   background-color: #fff;
   color: #444;
-  /*align-items: center;*/
 }
 
 .cell {
@@ -20,7 +19,5 @@ body {
   align-items: center;
   background-color: lightgrey;
   font-size: 8vw;
-  /*vertical-align: middle;*/
-  /*font-size: 1em;*/
 }
 
