@@ -19,7 +19,7 @@ class TicTacToe extends React.Component {
   }
 
   takeCell(location){
-    if (!this.state.grid[location]) {
+    if (!this.state.grid[location] && !this.state.winner) {
       const newGrid = this.state.grid.slice();
       let nextPlayer = "";
       if (this.state.player === "X") {
@@ -42,7 +42,6 @@ class TicTacToe extends React.Component {
       if (grid[winState[0]] === "O" && grid[winState[1]] === "O" && grid[winState[2]] ==="O") {
         setTimeout(()=>{this.resetState()}, 2000);
         this.setState({winner: "O"});
-
       }
     }.bind(this))
   }
