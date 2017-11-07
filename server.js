@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/client/build'));
 
-app.listen(80, 'localhost', () => {
+app.listen(process.env.PORT, 'localhost', () => {
   console.log("Server listening");
 });
 
