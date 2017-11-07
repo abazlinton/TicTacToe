@@ -16,8 +16,9 @@ app.listen(process.env.PORT, () => {
       console.log("Inserted 3 documents into the collection");
       console.log(result);
     });
+    db.close();
   })
-  db.close();
+  
 });
 
 
