@@ -1,0 +1,1 @@
+db.documents.insert({a: "ahahaha"})
