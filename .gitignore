@@ -1,4 +1,2 @@
-node_modules
-bundle.*
 client/src
 webpack.config.js
